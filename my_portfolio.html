@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathiksha's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        nav {
+            margin: 20px 0;
+        }
+        
+        nav a {
+            color: #ff14ff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #14ff91;
+        }
+        
+        section {
+            padding: 60px 40px;
+            border-bottom: 1px solid #333;
+        }
+        
+        h2 {
+            color: #eb1f74;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 0 0 10px rgba(235, 31, 116, 0.3);
+        }
+        
+        .home {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #1e1e1e 0%, #000000 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .home-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .home-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .profile-photo {
+            width: 350px;
+            height: 550px;
+            border-radius: 20px;
+            border: 4px solid #14ff91;
+            box-shadow: 0 0 40px rgba(20, 255, 145, 0.5);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(20, 255, 145, 0.7);
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .home h2 {
+            color: #ff14f3;
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 0 0 25px rgba(255, 20, 243, 0.5);
+            text-align: left;
+        }
+        
+        .home p {
+            font-size: 1.4em;
+            margin: 0 0 40px 0;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+        
+        .home .highlight {
+            color: #14ff91;
+            font-weight: bold;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .button {
+            background-color: #14ff91;
+            color: #000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .button:hover {
+            background-color: #5edae5;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(94, 218, 229, 0.4);
+        }
+        
+        .skills, .projects, .internship, .courses, .education {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            flex: 1 1 300px;
+            box-shadow: 0 0 20px rgba(255, 0, 225, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 0, 225, 0.3);
+        }
+        
+        .card h3 {
+            color: #ff14ff;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        footer p {
+            margin: 0;
+            color: #ffffff;
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info a {
+            color: #14ff91;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #5edae5;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 1024px) {
+            .home {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .home-content {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .home h2 {
+                text-align: center;
+            }
+            
+            .profile-photo {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .home h2 {
+                font-size: 2.8em;
+            }
+            
+            .home p {
+                font-size: 1.2em;
+            }
+            
+            .button {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+            
+            .profile-photo {
+                width: 250px;
+                height: 250px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 40px 20px;
+            }
+            
+            .home {
+                padding: 60px 20px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .button {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .home h2 {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internship">Internship</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="home">
+    <div class="home-content">
+        <h2>Hello! I am <span class="highlight">Prathiksha</span></h2>
+        <p>AI Engineer in the Making | <span class="highlight">Machine Learning</span> • <span class="highlight">Generative AI</span> • <span class="highlight">Data Analysis</span></p>
+        <p>Passionate about creating intelligent systems that transform data into actionable insights and innovative solutions.</p>
+        <div class="button-container">
+            <button class="button" onclick="scrollToSection('about')">Learn More About Me</button>
+            <button class="button" onclick="scrollToSection('projects')">View My Projects</button>
+            <button class="button" onclick="scrollToSection('contact')">Get In Touch</button>
+        </div>
+    </div>
+    
+    <div class="home-image">
+        <div class="profile-photo">
+            <img src="1756306156378.jpg" alt="Professional AI Engineer portrait of Prathiksha - confident female computer scientist with modern professional attire, standing against dark futuristic background with glowing neon blue and green accents, holding a tablet displaying AI algorithms" />
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am a curious and passionate Computer Science and Engineering student with a solid foundation in Python, C, and Java. I have strong interests in Generative AI, Machine Learning, and Data Analysis, with additional experience in Web Development. Eager to apply my skills in real-world projects, strengthen my programming expertise, and contribute to impactful software solutions while continuously learning and growing in AI and emerging technologies.</p>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <div class="education">
+        <div class="card">
+            <h3>Bachelor of Engineering in Computer Science & Engineering</h3>
+            <p><strong>Mangalore Institute of Technology & Engineering</strong> | 2021 - 2025</p>
+            <p>CGPA: 8.94</p>
+            <!-- <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Machine Learning, Artificial Intelligence, Database Management Systems, Web Technologies, Software Engineering</p> -->
+        </div>
+        <div class="card">
+            <h3>Senior Secondary (12th)</h3>
+            <p><strong>K.M.E.S, Karkala</strong> | 2020 - 2022</p>
+            <p>Percentage: 96.1%</p>
+            <!-- <p><strong>Subjects:</strong> Physics, Chemistry, Mathematics, Computer Science</p> -->
+        </div>
+        <div class="card">
+            <h3>Secondary School (SSLC)</h3>
+            <p><strong>K.M.E.S, Karkala</strong> | 2019 - 2020</p>
+            <p>Percentage: 98.56%</p>
+            <!-- <p><strong>Subjects:</strong> Physics, Chemistry, Mathematics, Computer Science</p> -->
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="card">
+            <h3>Programming Languages</h3>
+            <p>Python, Java, C, JavaScript</p>
+        </div>
+        <div class="card">
+            <h3>Web Technologies</h3>
+            <p>HTML, CSS, React JS, MySQL</p>
+        </div>
+        <div class="card">
+            <h3>AI & ML Technologies</h3>
+            <p>TensorFlow, PyTorch, OpenCV, IBM Watson, NLP</p>
+        </div>
+        <div class="card">
+            <h3>Tools & Platforms</h3>
+            <p>VS Code, PyCharm, GitHub, Google Colab, Figma, Microsoft Excel</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>LogoXpose: Unmasking Fake Logos with AI</h3>
+            <p>Built a desktop application using Tkinter to detect and classify logos in images and videos as real or fake using deep learning techniques.</p>
+            <p><strong>Technologies:</strong> Python, TensorFlow/Keras, OpenCV, Tkinter</p>
+        </div>
+        <div class="card">
+            <h3>AI-Powered Chatbot for Pet Adoption</h3>
+            <p>Designed and implemented a chatbot using IBM Watson Assistant to assist users in adopting pets through natural language conversations.</p>
+            <p><strong>Technologies:</strong> IBM Watson, NLP, Python</p>
+        </div>
+        <div class="card">
+            <h3>Indian Crime Pattern Analyzer</h3>
+            <p>Built an interactive crime data analysis tool to explore patterns and trends in Indian crime statistics using Streamlit for visualization.</p>
+            <p><strong>Technologies:</strong> Python, Streamlit, Pandas, Data Visualization</p>
+        </div>
+        <div class="card">
+            <h3>Handwritten Digit Generation using GANs</h3>
+            <p>Developed a Generative Adversarial Network in Python to generate realistic handwritten digits from random noise inputs.</p>
+            <p><strong>Technologies:</strong> Python, PyTorch, GANs</p>
+        </div>
+    </div>
+</section>
+
+<section id="internship">
+    <h2>Internship</h2>
+    <div class="internship">
+        <div class="card">
+            <h3>IBM | Emerging Technologies (AI & Cloud) Intern</h3>
+            <p><strong>Duration:</strong> July 2024 – August 2024</p>
+            <p>Gained hands-on experience in AI, Cloud Computing, Data Analysis, and Natural Language Processing (NLP). Strengthened skills in building and deploying AI-driven solutions for real-world applications. Worked on projects involving machine learning model deployment and cloud infrastructure.</p>
+        </div>
+    </div>
+</section>
+
+<section id="courses">
+    <h2>Courses & Workshops</h2>
+    <div class="courses">
+        <div class="card">Mastering Generative AI and ChatGPT - GeeksForGeeks (2025)</div>
+        <div class="card">Data Analytics Virtual Internship - Deloitte Australia (2025)</div>
+        <div class="card">Generative AI Mastermind Program - OutSkill (2025)</div>
+        <div class="card">Mastering Python for Product & Process Development - MITE (2025)</div>
+        <div class="card">Remote Sensing Data Analytics in Crop Production Forecasting - ISRO (2025)</div>
+        <div class="card">Career Essentials in Generative AI - Microsoft & LinkedIn (2024)</div>
+        <div class="card">Career Essentials in Software Development - Microsoft & LinkedIn (2024)</div>
+        <div class="card">AI Tools Workshop - be10x (2024)</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:prathikshashetty4002@gmail.com">prathikshashetty4002@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 - 7619313750</p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/prathikshashetty4002" target="_blank">linkedin.com/in/prathikshashetty4002</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/prathikshashetty4002" target="_blank">github.com/prathikshashetty4002</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Prathiksha. All rights reserved.</p>
+</footer>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    // Add intersection observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards for animation
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+</script>
+
+</body>
+</html>
+
